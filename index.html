@@ -557,6 +557,17 @@
 
     <!-- How It Works -->
     <section class="bg-black py-20 relative overflow-hidden">
+        <!-- White Shadows -->
+        <div class="absolute inset-0 pointer-events-none">
+            <!-- Top Right Corner Shadow -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/15 via-white/8 to-transparent rounded-bl-full"></div>
+            <!-- Bottom Left Corner Shadow -->
+            <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-white/15 via-white/8 to-transparent rounded-tr-full"></div>
+            <!-- Left Side Shadow (after 35% height) -->
+            <div class="absolute left-0 w-24 bg-gradient-to-r from-white/12 via-white/6 to-transparent" style="top: 35%; height: 30%;"></div>
+            <!-- Right Side Shadow (after 65% height) -->
+            <div class="absolute right-0 w-24 bg-gradient-to-l from-white/12 via-white/6 to-transparent" style="top: 65%; height: 35%;"></div>
+        </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">How It Works</h2>
