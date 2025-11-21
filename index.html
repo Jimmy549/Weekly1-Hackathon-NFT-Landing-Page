@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#1a1a1a',
+                        'accent': '#D4905C'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white">
+    <!-- White Shadows Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-50">
+        <!-- Left Shadow -->
+        <div class="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white/15 via-white/8 via-white/3 to-transparent"></div>
+        <!-- Right Shadow -->
+        <div class="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white/15 via-white/8 via-white/3 to-transparent"></div>
+    </div>
+    <!-- Header -->
+    <header class="relative min-h-screen">
+        <img src="./img/main bg img.png" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-100">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+        
+        <!-- Navigation -->
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold text-white">LogoHere</div>
+                    <div class="flex items-center">
+                        <div class="hidden md:flex items-center space-x-10">
+                            <a href="#" class="text-white hover:text-accent transition-colors font-medium">About</a>
+                            <a href="#" class="text-white hover:text-accent transition-colors font-medium">Collection</a>
+                            <a href="#" class="text-white hover:text-accent transition-colors font-medium">Creator</a>
+                            <a href="#" class="text-white hover:text-accent transition-colors font-medium">Road Map</a>
+                            <button class="bg-accent px-8 py-3 rounded-full hover:bg-accent/80 transition-colors font-medium text-white ml-10">
+                                sign in
+                            </button>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobileMenu" class="hidden md:hidden mt-4 bg-black/80 backdrop-blur-sm rounded-2xl p-6">
+                    <div class="flex flex-col space-y-4">
+                        <a href="#" class="text-white hover:text-accent transition-colors font-medium">About</a>
+                        <a href="#" class="text-white hover:text-accent transition-colors font-medium">Collection</a>
+                        <a href="#" class="text-white hover:text-accent transition-colors font-medium">Creator</a>
+                        <a href="#" class="text-white hover:text-accent transition-colors font-medium">Road Map</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Content -->
+        <div class="relative z-20 px-6 lg:px-12 pt-24 pb-20">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="relative">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                                We Have High Quality <span class="text-accent">NFT</span> Collections
+                            </h1>
+                            <div class="absolute -top-8 -right-8 text-white/10">
+                                <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur. Rhoncus egestas suspendisse tortor sed cursus lorem tortor. Iaculis bibendum mauris ut mauris bibendum sit porta vulputate. Egestas lectus ornare consectetur mauris mauris.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <button class="bg-accent px-8 py-3.5 rounded-full hover:bg-accent/80 transition-colors font-semibold text-white">
+                                Get Whitelist
+                            </button>
+                            <button class="border-2 border-white px-8 py-3.5 rounded-full hover:bg-white/10 transition-colors font-semibold">
+                                Contact Us
+                            </button>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-6 sm:gap-12 pt-8">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-bold">240k+</div>
+                                <div class="text-gray-400 text-xs sm:text-sm mt-1">Total Sale</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-bold">100k+</div>
+                                <div class="text-gray-400 text-xs sm:text-sm mt-1">Auctions</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-bold">240k+</div>
+                                <div class="text-gray-400 text-xs sm:text-sm mt-1">Artists</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex justify-center lg:justify-end">
+                        <div class="relative group">
+                            <!-- Decorative star top right -->
+                            <div class="absolute -top-6 -right-6 text-white/20 z-10">
+                                <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Decorative star bottom left -->
+                            <div class="absolute -bottom-8 -left-8 text-white/10 z-10">
+                                <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Golden border frame -->
+                            <div class="relative bg-gradient-to-br from-accent/30 via-accent/20 to-transparent rounded-[2.5rem] p-1 border-2 border-accent/40">
+                                <div class="bg-gradient-to-br from-gray-800/40 to-gray-900/60 backdrop-blur-sm rounded-[2.3rem] p-0 overflow-hidden">
+                                    <img src="./img/Header img.png" alt="NFT Character" class="w-full max-w-md rounded-[2.3rem] object-cover">
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation arrow -->
+                            <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12">
+                                <button class="bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors border border-white/20">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!-- About Us Section -->
+<section class="relative bg-black py-20">
+    <div class="absolute inset-0">
+        <img src="./img/main bg img.png" alt="About Us Background" class="w-full h-full object-cover opacity-60">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <!-- Section Title -->
+        <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16">About Us</h2>
+        
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center bg-[#DA8F4D17] py-8 sm:py-14 px-4 sm:px-8 rounded-3xl">
+            <!-- Left Side - NFT Cards Grid -->
+            <div class="grid grid-cols-2 gap-3 sm:gap-6 w-full lg:w-1/2">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border border-white/10 aspect-square overflow-hidden">
+                    <img src="./img/About img-1.png" alt="NFT Tiger 1" class="w-full h-full object-cover object-top">
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border border-white/10 aspect-square overflow-hidden">
+                    <img src="./img/About img-2.png" alt="NFT Tiger 2" class="w-full h-full object-cover object-top">
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border border-white/10 aspect-square overflow-hidden">
+                    <img src="./img/About img-3.png" alt="NFT Tiger 3" class="w-full h-full object-cover object-top">
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border border-white/10 aspect-square overflow-hidden">
+                    <img src="./img/About img-4.png" alt="NFT Tiger 4" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+            
+            <!-- Right Side - Text Content -->
+            <div class="w-full lg:w-1/2 text-white space-y-6">
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Lorem ipsum dolor sit amet consectetur. Pharetra faucibus donec ultrices eros elit metus morbi aliquam quis. Suspendisse massa ullamcorper tortor morbi nisi leo. Ultrices ac vel tincidunt nunc eget elit. Gravida et quis pellentesque libero. Tellus rhoncus metus et eget mattis fringilla nec id. Amet ultrices quis ridiculus tellus. Leo adipiscing tincidunt amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam adipiscing at.
+                </p>
+                
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Tellus rhoncus metus et eget mattis fringilla nec id. Amet ultrices quis ridiculus tellus. Leo adipiscing tincidunt amet nisi semper adipiscing quam in est. Tempor sed dui nunc diam adipiscing at.
+                </p>
+                
+                <!-- Connect Wallet Button -->
+                <div class="pt-4">
+                    <button class="bg-[#4a4a4a] hover:bg-[#5a5a5a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium transition duration-300 text-sm shadow-lg">
+                        Connect Wallet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Top Collections -->
+    <section class="relative bg-black py-20 min-h-screen">
+        <div class="absolute inset-0">
+            <img src="img/main bg img.png" alt="Top Collections Background" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Top Collections</h2>
+                <p class="text-gray-300">The largest and unique Super rare NFT marketplace<br>For crypto-collectibles</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-4 sm:p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <div class="w-6 sm:w-8 h-6 sm:h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-4 sm:w-6 h-4 sm:h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-xs sm:text-sm">Created by</p>
+                            <p class="text-accent font-medium text-sm sm:text-base">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-4 sm:mb-6">
+                        <div class="w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-1.png" alt="Collection 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-white">Nfts Collections</h3>
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Created by</p>
+                            <p class="text-accent font-medium">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-6">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-2.png" alt="Collection 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Created by</p>
+                            <p class="text-accent font-medium">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-6">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-3.png" alt="Collection 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Created by</p>
+                            <p class="text-accent font-medium">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-6">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-4.png" alt="Collection 4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Created by</p>
+                            <p class="text-accent font-medium">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-6">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-5.png" alt="Collection 5" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-3xl border-2 border-accent/40 p-6 hover:border-accent/60 transition-all duration-300">
+                    <!-- Creator Info -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Created by</p>
+                            <p class="text-accent font-medium">James Watson</p>
+                        </div>
+                    </div>
+                    <!-- NFT Image -->
+                    <div class="flex justify-center mb-6">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30">
+                            <img src="img/Top collection-6.png" alt="Collection 6" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Collection Title -->
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-white">Nfts Collections</h3>
+                        <p class="text-gray-400 text-sm mt-1">Created by <span class="text-accent">James Watson</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-accent px-8 py-3 rounded-full hover:bg-accent/80 transition-colors font-medium">
+                    View More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Creators -->
+    <section class="bg-black py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Top Creators</h2>
+                <p class="text-gray-300">Checkout Top Rated Creators on the NFT Marketplace</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-1.png" alt="Creator 1" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Jameel</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 34.53 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-2.png" alt="Creator 2" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Usama Naseem</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 32.15 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-3.png" alt="Creator 3" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Usama Akram</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 28.93 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-4.png" alt="Creator 4" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Umar</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 25.30 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-5.png" alt="Creator 5" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Ali</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 22.87 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-6.png" alt="Creator 6" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Asgher</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 20.45 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-7.png" alt="Creator 7" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Shahid Anwar</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 18.92 ETH</p>
+                </div>
+                <div class="bg-card-bg rounded-2xl p-6 text-center hover:bg-card-bg/80 transition-colors">
+                    <img src="img/top creators-8.png" alt="Creator 8" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-lg font-semibold mb-1">Sadiq</h3>
+                    <p class="text-gray-400 mb-3">Total Sale: 15.67 ETH</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Road Map Section -->
+<section class="relative bg-black py-20 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+        <img src="./img/main bg img.png" class="w-full h-full object-cover opacity-40">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+        <h2 class="text-center text-white text-4xl sm:text-5xl font-bold mb-20">Road Map</h2>
+
+        <div class="relative">
+            <!-- Central Timeline Line -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent to-accent transform -translate-x-1/2 hidden md:block"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-0">
+                
+                <!-- Brief - Left Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl shadow-[-20px_0_30px_rgba(255,255,255,0.1)]">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">January</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Brief</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2"></div>
+                </div>
+
+                <!-- Research - Right Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2"></div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">February</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Research</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discover - Left Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">March</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Discover</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2"></div>
+                </div>
+
+                <!-- Design - Right Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2"></div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">April</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Design</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing - Left Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">May</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Testing</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2"></div>
+                </div>
+
+                <!-- Launch & Feedback - Right Side -->
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <div class="w-full md:w-1/2"></div>
+                    <!-- Timeline Dot -->
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent rounded-full border-4 border-black shadow-lg z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                        <div class="relative max-w-sm w-full">
+                            <div class="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-sm border-2 border-accent/30 rounded-3xl p-8 shadow-2xl">
+                                <div class="text-accent text-sm font-medium mb-2 tracking-wide">June</div>
+                                <h3 class="text-white text-2xl font-bold mb-4">Launch & Feedback</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis. Morbi sed aliquet donec facilisis. Senectus eget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- How It Works -->
+    <section class="bg-black py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">How It Works</h2>
+            </div>
+            <div class="space-y-24">
+                <!-- Step 1 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-gray-900/40 to-gray-800/20 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/30 shadow-2xl relative overflow-hidden">
+                            <!-- Corner light shadows -->
+                            <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent rounded-br-full"></div>
+                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-white/8 to-transparent rounded-tl-full"></div>
+                            <img src="img/setup-wallet.png" alt="Setup Wallet" class="w-full max-w-md mx-auto relative z-10">
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <!-- Star symbol -->
+                        <div class="absolute -top-4 left-8 text-accent text-2xl">✦</div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Setup And Connect Your Wallet</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Use Trust Wallet, Metamask or any wallet to connect to multiple chains the app.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="lg:order-2 relative">
+                        <div class="bg-gradient-to-br from-gray-900/40 to-gray-800/20 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/30 shadow-2xl relative overflow-hidden">
+                            <!-- Corner light shadows -->
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-full"></div>
+                            <div class="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-white/8 to-transparent rounded-tr-full"></div>
+                            <img src="img/digital nft.png" alt="Create NFT" class="w-full max-w-md mx-auto relative z-10">
+                        </div>
+                    </div>
+                    <div class="lg:order-1 relative">
+                        <!-- Star symbol -->
+                        <div class="absolute -top-4 right-8 text-accent text-2xl">✦</div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Create Your Own Digital NFT</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Simply upload your art, add a title and description, and customize your NFTs with properties.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-gray-900/40 to-gray-800/20 backdrop-blur-sm p-8 rounded-3xl border border-gray-700/30 shadow-2xl relative overflow-hidden">
+                            <!-- Corner light shadows -->
+                            <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent rounded-br-full"></div>
+                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-white/8 to-transparent rounded-tl-full"></div>
+                            <img src="img/digtal nft-2.png" alt="Start Earning" class="w-full max-w-md mx-auto relative z-10">
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <!-- Star symbol -->
+                        <div class="absolute -top-4 left-8 text-accent text-2xl">✦</div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Start Earning</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Earn by selling your NFTs or trading others. The world's largest NFT marketplace.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Community -->
+    <section class="relative bg-black py-20">
+        <div class="absolute inset-0">
+            <img src="img/main bg img.png" alt="Join Community Background" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Join Our Community</h2>
+            <p class="text-gray-300 mb-8 text-base sm:text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 sm:px-6 py-3 rounded-full bg-card-bg border border-gray-600 focus:border-accent outline-none bg-white text-black text-sm sm:text-base">
+                <button class="bg-accent px-6 sm:px-8 py-3 rounded-full hover:bg-accent/80 transition-colors whitespace-nowrap text-sm sm:text-base">
+                    Subscribe
+                </button>
+            </div>
+            <br>
+            <p>&copy; 2025 CryptoArt. All rights reserved.</p>
+        </div>
+         
+    </section>
+
+    
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-gray-900');
+                navbar.classList.add('bg-gray-900/80', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-gray-900/80', 'backdrop-blur-sm');
+                navbar.classList.add('bg-gray-900');
+            }
+        });
+    </script>
+</body>
+</html>
